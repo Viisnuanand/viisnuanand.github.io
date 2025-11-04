@@ -244,6 +244,8 @@ section {
 .badge.participation { background: #9333ea; }
 .badge.course { background: #059669; }
 .badge.internship { background: #f59e0b; }
+.badge.finalist { background: #e11d48; }  
+
 
 /* === Contact Section === */
 .contact {
