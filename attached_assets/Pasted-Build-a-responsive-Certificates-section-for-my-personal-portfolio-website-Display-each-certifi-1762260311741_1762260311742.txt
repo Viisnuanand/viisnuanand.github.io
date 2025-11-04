@@ -1,0 +1,64 @@
+Build a responsive “Certificates” section for my personal portfolio website.  
+Display each certificate as a clean, minimal card (no buttons like “View,” “Download,” or “Verify”).  
+Each card should include:
+- Certificate title
+- Issuer / Organization
+- Recipient name (“Viisnu Anand S”)
+- Date or period
+- Short one-line description or key detail
+- Optional small metadata badges (like “Course,” “Internship,” or “Score: 73”)
+Use a modern card layout (rounded corners, subtle shadows, equal width cards in a responsive grid: 3 per row on desktop, 2 on tablet, 1 on mobile).
+
+Here are the certificates to include:
+
+1️⃣ **Frequency Distribution**
+- Issuer: Great Learning Academy  
+- Recipient: Viisnu Anand S  
+- Date: September 2024  
+- Type: Course  
+- Description: Completed a free online course on Frequency Distribution.
+
+2️⃣ **AWS Foundations: Machine Learning Basics**
+- Issuer: AWS  
+- Recipient: Viisnu anand  
+- Date: 01 Jan 2025  
+- Type: Course  
+- Description: Completed foundational course on Machine Learning concepts using AWS services.
+
+3️⃣ **C Programming for Embedded Applications**
+- Issuer: LinkedIn Learning  
+- Recipient: Viisnu Anand  
+- Date: May 30, 2025  
+- Duration: 2 hours 5 minutes  
+- Skills: Embedded C, C Programming Language  
+- Description: Completed course focused on programming embedded systems in C.
+
+4️⃣ **Introduction to Battery-Management Systems**
+- Issuer: University of Colorado Boulder (Coursera)  
+- Recipient: Viisnu S  
+- Date: Oct 8, 2025  
+- Description: Completed non-credit course on battery management systems via Coursera.
+
+5️⃣ **Internship — Pricol Limited**
+- Issuer: Pricol Limited  
+- Recipient: Viisnu Anand S  
+- Period: 16 Jun 2025 – 30 Jun 2025  
+- Performance: Good  
+- Description: Completed internship at Pricol Limited, Corporate – Manufacturing Engineering department.
+
+6️⃣ **Introduction to Internet of Things (IoT)**
+- Issuer: NPTEL  
+- Recipient: VIISNU ANAND S  
+- Term: Jul – Oct 2024 (12-week course)  
+- Score: 73  
+- Description: Completed 12-week NPTEL course on Introduction to IoT.
+
+Design details:
+- Use consistent card style (rounded-xl corners, soft shadow, light background)
+- Use accent color (#4f46e5 or similar) for certificate titles
+- Center content vertically with padding
+- Optional small icons or emojis for each type (e.g., 🎓 for course, 🧠 for skills, 🏢 for internship)
+- Use readable fonts and hierarchy (title > issuer/date > description)
+- No “View,” “Download,” or “Verify” buttons
+
+Output full HTML + CSS (or JSX + Tailwind CSS if requested). Keep layout simple, elegant, and responsive.
