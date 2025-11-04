@@ -40,6 +40,17 @@ function reveal() {
 }
 window.addEventListener('scroll', reveal);
 window.addEventListener('load', reveal);
+// Fade-in certificates on scroll
+const certs = document.querySelectorAll('.cert');
+window.addEventListener('scroll', () => {
+  certs.forEach(cert => {
+    const rect = cert.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      cert.classList.add('visible');
+    }
+  });
+});
+
 
 // Expand / collapse for project cards
 document.querySelectorAll('.card .learn').forEach(link => {
