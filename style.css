@@ -3,6 +3,7 @@
   --card: #1e1e1f;
   --muted: #bdbdbd;
   --accent: #2563eb;
+  --accent-2: #7c3aed;
   --container: 1100px;
   color-scheme: dark;
 }
@@ -157,7 +158,6 @@ section {
   transition: all 0.3s ease;
 }
 
-/* Dark mode buttons */
 .btn {
   background: rgba(255, 255, 255, 0.05);
   color: #e6e6e6;
@@ -168,7 +168,6 @@ section {
   transform: translateY(-2px);
 }
 
-/* Primary Button */
 .btn.primary {
   background: var(--accent);
   color: #fff;
@@ -182,7 +181,6 @@ section {
   box-shadow: 0 0 25px rgba(37, 99, 235, 0.9);
 }
 
-/* Secondary Button */
 .btn.smooth {
   background: transparent;
   color: #e6e6e6;
@@ -195,7 +193,6 @@ section {
   transform: translateY(-2px);
 }
 
-/* Pulse Animation */
 @keyframes soft-pulse {
   0% { box-shadow: 0 0 8px rgba(37,99,235,0.4); }
   50% { box-shadow: 0 0 22px rgba(37,99,235,0.8); }
@@ -235,7 +232,7 @@ section {
   margin: 0 0 10px;
 }
 
-/* === Projects Section === */
+/* === Projects Section (Existing Cards) === */
 .projects {
   padding: 80px 0;
 }
@@ -273,6 +270,139 @@ section {
   max-height: 200px;
   opacity: 1;
   transform: scaleY(1);
+}
+
+/* === New ANAV Project Layout === */
+.card-anav {
+  background: linear-gradient(180deg, var(--card), rgba(11,18,32,0.85));
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.7);
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+  align-items: start;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.card-anav:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(4,10,30,0.7);
+}
+
+.card-anav .meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-anav .eyebrow {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.card-anav .title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--txt);
+}
+
+.card-anav .subtitle {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.card-anav .blurb {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.card-anav .badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.card-anav .badge {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--txt);
+}
+
+.card-anav .badge strong {
+  color: var(--accent-2);
+}
+
+.card-anav .btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: var(--txt);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.card-anav .btn.primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border: none;
+  color: #04141f;
+}
+
+.card-anav .btn:hover {
+  transform: translateY(-2px);
+}
+
+.card-anav .details {
+  margin-top: 14px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  max-height: 0;
+}
+
+.card-anav .details.open {
+  max-height: 1000px;
+  padding: 18px;
+}
+
+.card-anav .details p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+
+.card-anav .panel {
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+  border-radius: 12px;
+  padding: 12px;
+  height: 100%;
+}
+
+.card-anav .chip {
+  background: rgba(255,255,255,0.03);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--txt);
+  display: inline-block;
+  margin: 4px 6px 0 0;
+}
+
+@media (max-width: 880px) {
+  .card-anav {
+    grid-template-columns: 1fr;
+  }
+  .card-anav .panel {
+    order: 3;
+  }
 }
 
 /* === Certificates Section === */
@@ -347,7 +477,6 @@ section {
   margin: 30px 0;
 }
 
-/* Contact Buttons */
 .btn.secondary {
   background: rgba(255, 255, 255, 0.08);
   color: #e6e6e6;
@@ -433,3 +562,4 @@ section {
     grid-template-columns: 1fr;
   }
 }
+
