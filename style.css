@@ -14,11 +14,16 @@
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  font-family: 'Source Sans 3', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
   background: var(--bg);
   color: #e6e6e6;
   -webkit-font-smoothing: antialiased;
 }
+
+h1, h2, h3, .brand {
+  font-family: 'Montserrat', sans-serif;
+}
+
 
 .container {
   max-width: var(--container);
