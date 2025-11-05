@@ -345,5 +345,31 @@ section {
     grid-template-columns: 1fr;
   }
 }
+/* === Button Animations === */
+.btn.pulse {
+  animation: pulseButton 2s infinite ease-in-out;
+}
+@keyframes pulseButton {
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(37,99,235,0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(37,99,235,0.7); }
+  100% { transform: scale(1); box-shadow: 0 0 0 rgba(37,99,235,0.4); }
+}
+
+.btn.smooth:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+}
+
+/* === Projects Expand Animation === */
+.card .hidden {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+.card .hidden.open {
+  opacity: 1;
+}
 
 
