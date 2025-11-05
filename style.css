@@ -69,18 +69,15 @@ section {
   font-weight: 500;
   transition: color 0.3s ease;
 }
-
 .nav a:hover {
   color: var(--accent);
 }
-
 .nav a.active {
   color: var(--accent);
   font-weight: 600;
   border-bottom: 2px solid var(--accent);
   padding-bottom: 2px;
 }
-
 .theme-btn {
   background: none;
   border: 0;
@@ -100,24 +97,6 @@ section {
   padding-top: 80px;
   position: relative;
   overflow: hidden;
-}
-
-/* Optional subtle animated background for dark mode */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.08), transparent 70%);
-  animation: glowPulse 6s ease-in-out infinite alternate;
-  z-index: 0;
-}
-
-@keyframes glowPulse {
-  from { opacity: 0.4; transform: scale(1); }
-  to { opacity: 0.8; transform: scale(1.1); }
 }
 
 .hero-inner {
@@ -157,7 +136,6 @@ section {
   padding: 80px 0;
   text-align: left;
 }
-
 .about-inner {
   display: flex;
   align-items: center;
@@ -165,7 +143,6 @@ section {
   gap: 60px;
   flex-wrap: wrap;
 }
-
 .avatar {
   width: 240px;
   height: 240px;
@@ -174,24 +151,20 @@ section {
   object-fit: cover;
   display: block;
 }
-
 .about-right {
   flex: 1;
   min-width: 280px;
 }
-
 .about-right h2 {
   font-size: 36px;
   margin: 0 0 10px;
 }
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   margin-top: 10px;
 }
-
 .skills-grid div {
   background: var(--card);
   padding: 12px;
@@ -203,13 +176,11 @@ section {
 .projects {
   padding: 80px 0;
 }
-
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 28px;
 }
-
 .card {
   background: var(--card);
   padding: 28px;
@@ -219,7 +190,6 @@ section {
   transition: transform 0.25s, box-shadow 0.25s;
   overflow: hidden;
 }
-
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
@@ -229,14 +199,12 @@ section {
 .certs {
   padding: 80px 0;
 }
-
 .certificates-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   margin-top: 40px;
 }
-
 .cert-card {
   background: var(--card);
   border-radius: 12px;
@@ -246,24 +214,20 @@ section {
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
-
 .cert-card.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
 .cert-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
   background: rgba(255, 255, 255, 0.04);
 }
-
 .cert-card h3 {
   color: #fff;
   margin: 8px 0;
   font-size: 1.1rem;
 }
-
 .cert-card p {
   margin: 4px 0;
   color: var(--muted);
@@ -271,19 +235,35 @@ section {
   line-height: 1.4;
 }
 
+/* === Badges (Restored Colors) === */
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.badge.internship { background: #f59e0b; }
+.badge.achievement { background: #2563eb; }
+.badge.finalist { background: #e11d48; }
+.badge.course { background: #059669; }
+.badge.participation { background: #9333ea; }
+
 /* === Contact Section === */
 .contact {
   padding: 80px 0;
   text-align: center;
 }
-
 .contact .contact-actions {
   display: flex;
   gap: 12px;
   justify-content: center;
   margin: 20px 0;
 }
-
 .btn {
   display: inline-block;
   padding: 10px 18px;
@@ -295,14 +275,12 @@ section {
   font-weight: 500;
   transition: all 0.3s ease;
 }
-
 .btn.primary {
   background: var(--accent);
   color: white;
   border: none;
   animation: pulse-glow 2s infinite ease-in-out;
 }
-
 .btn.primary:hover {
   box-shadow: 0 0 20px rgba(37, 99, 235, 0.8);
   transform: scale(1.05);
@@ -333,7 +311,9 @@ section {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.light .nav a { color: #333; }
+.light .nav a {
+  color: #333;
+}
 
 .light .btn {
   color: #111;
@@ -345,16 +325,25 @@ section {
   color: #fff;
 }
 
-/* === Responsive === */
+/* === Responsive Design === */
 @media (max-width: 900px) {
   .about-inner {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  .avatar { margin-bottom: 20px; }
-  .skills-grid { grid-template-columns: 1fr; }
-  .hero-inner h1 { font-size: 36px; }
-  .cards, .certificates-grid { grid-template-columns: 1fr; }
+  .avatar {
+    margin-bottom: 20px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-inner h1 {
+    font-size: 36px;
+  }
+  .cards, .certificates-grid {
+    grid-template-columns: 1fr;
+  }
 }
+
 
