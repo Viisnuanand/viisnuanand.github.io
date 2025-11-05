@@ -18,6 +18,7 @@ body {
   background: var(--bg);
   color: #e6e6e6;
   -webkit-font-smoothing: antialiased;
+  transition: background 0.6s ease, color 0.6s ease;
 }
 
 h1, h2, h3, .brand {
@@ -47,6 +48,7 @@ section {
   backdrop-filter: blur(4px);
   z-index: 50;
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: background 0.4s ease;
 }
 
 .header-inner {
@@ -96,11 +98,34 @@ section {
   justify-content: center;
   text-align: center;
   padding-top: 80px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Gradient Hero Text */
+/* Optional subtle animated background for dark mode */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.08), transparent 70%);
+  animation: glowPulse 6s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes glowPulse {
+  from { opacity: 0.4; transform: scale(1); }
+  to { opacity: 0.8; transform: scale(1.1); }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
 .hero-inner h1 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 64px;
   letter-spacing: -1px;
@@ -116,9 +141,7 @@ section {
   -webkit-text-fill-color: transparent;
 }
 
-/* Tagline */
 .tagline {
-  font-family: 'Source Sans 3', sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
   color: #cfcfcf;
@@ -202,36 +225,6 @@ section {
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
 }
 
-.card p {
-  max-height: 2.8em;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-  opacity: 0.9;
-}
-
-.card.open p {
-  max-height: 200px;
-  opacity: 1;
-}
-
-.card .learn {
-  display: inline-block;
-  margin-top: 10px;
-  color: #bdbdbd;
-  font-weight: 600;
-  text-decoration: none;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 8px 14px;
-  border-radius: 8px;
-  transition: background 0.3s ease, transform 0.2s ease, color 0.3s ease;
-}
-
-.card .learn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #e6e6e6;
-  transform: translateY(-2px);
-}
-
 /* === Certificates Section === */
 .certs {
   padding: 80px 0;
@@ -239,8 +232,8 @@ section {
 
 .certificates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
   margin-top: 40px;
 }
 
@@ -252,7 +245,6 @@ section {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
-  will-change: transform, opacity;
 }
 
 .cert-card.visible {
@@ -270,34 +262,14 @@ section {
   color: #fff;
   margin: 8px 0;
   font-size: 1.1rem;
-  line-height: 1.4;
 }
 
 .cert-card p {
-  margin: 6px 0;
+  margin: 4px 0;
   color: var(--muted);
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.4;
 }
-
-/* Badges */
-.badge {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 4px 8px;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.badge.achievement { background: #2563eb; }
-.badge.participation { background: #9333ea; }
-.badge.course { background: #059669; }
-.badge.internship { background: #f59e0b; }
-.badge.finalist { background: #e11d48; }
 
 /* === Contact Section === */
 .contact {
@@ -312,47 +284,37 @@ section {
   margin: 20px 0;
 }
 
-/* === Buttons === */
 .btn {
   display: inline-block;
   padding: 10px 18px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
   color: #e6e6e6;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
-.btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
 .btn.primary {
   background: var(--accent);
-  color: #fff;
+  color: white;
   border: none;
-  box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
   animation: pulse-glow 2s infinite ease-in-out;
 }
 
 .btn.primary:hover {
-  background: #1e50c3;
-  transform: scale(1.05);
   box-shadow: 0 0 20px rgba(37, 99, 235, 0.8);
+  transform: scale(1.05);
 }
 
-/* Pulse animation */
 @keyframes pulse-glow {
   0% { box-shadow: 0 0 0 rgba(37, 99, 235, 0.6); }
   50% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.8); }
   100% { box-shadow: 0 0 0 rgba(37, 99, 235, 0.6); }
 }
 
-/* === Light Theme Mode === */
+/* === Light Theme === */
 :root.light {
   --bg: #f9f9f9;
   --card: #ffffff;
@@ -372,26 +334,15 @@ section {
 }
 
 .light .nav a { color: #333; }
-.light .nav a.active {
-  color: var(--accent);
-  border-bottom: 2px solid var(--accent);
-}
 
 .light .btn {
   color: #111;
-  background: rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-.light .btn:hover {
-  background: rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+  border-color: rgba(0, 0, 0, 0.15);
 }
 
 .light .btn.primary {
   background: var(--accent);
   color: #fff;
-  border: none;
 }
 
 /* === Responsive === */
@@ -401,15 +352,9 @@ section {
     align-items: center;
     text-align: center;
   }
-  .avatar {
-    margin-bottom: 20px;
-  }
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-  .hero-inner h1 {
-    font-size: 36px;
-  }
-  .cards { grid-template-columns: 1fr; }
-  .certificates-grid { grid-template-columns: 1fr; }
+  .avatar { margin-bottom: 20px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .hero-inner h1 { font-size: 36px; }
+  .cards, .certificates-grid { grid-template-columns: 1fr; }
 }
+
