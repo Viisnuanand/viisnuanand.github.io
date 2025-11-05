@@ -2,280 +2,181 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Viisnu Anand S | Portfolio</title>
-  
-  <meta name="description" content="Portfolio of Viisnu Anand S — Electronics & Communication Engineer passionate about Robotics, Drones, and Embedded Systems." />
-  <meta name="keywords" content="Viisnu Anand, Robotics Engineer, Drones, Embedded Systems, Portfolio, ECE, AI Robotics" />
-  <meta name="author" content="Viisnu Anand S" />
-  <meta property="og:title" content="Viisnu Anand S — Robotics & Drones Enthusiast" />
-  <meta property="og:description" content="Explore my projects, certifications, and achievements in Robotics, Drones, and Embedded Systems." />
-  <meta property="og:image" content="assets/viisnu.jpg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://viisnu01.github.io/portfolio-1/" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ANAV — Project Card (Professional Version)</title>
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #98a0b3;
+      --accent: #38bdf8;
+      --accent-2: #7c3aed;
+      --glass: rgba(255,255,255,0.04);
+      --container: 980px;
+      --radius: 16px;
+      --txt: #e6eef8;
+    }
+    *{box-sizing:border-box}
+    body{background:linear-gradient(180deg,var(--bg),#071026);font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:var(--txt);margin:24px;display:flex;align-items:flex-start;justify-content:center}
+    .wrap{width:100%;max-width:var(--container)}
 
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    .card{background:linear-gradient(180deg,var(--card),rgba(11,18,32,0.85));border-radius:var(--radius);padding:20px;box-shadow:0 8px 30px rgba(2,6,23,0.7);display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
+
+    .meta{display:flex;flex-direction:column;gap:12px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-size:13px}
+    .title{font-size:20px;font-weight:700;letter-spacing:-0.2px}
+    .subtitle{color:var(--muted);font-size:14px}
+    .blurb{margin-top:6px;color:var(--muted);line-height:1.45}
+
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .badge{background:var(--glass);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--txt);display:inline-flex;align-items:center;gap:8px}
+    .badge strong{color:var(--accent-2);font-weight:600}
+
+    .controls{display:flex;gap:10px;margin-top:14px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--txt);font-weight:600;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:#05202a}
+
+    .panel{background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);border-radius:12px;padding:12px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+    .tech{display:flex;flex-direction:column;gap:10px}
+    .tech h4{margin:0;font-size:13px;color:var(--muted)}
+    .tech-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+    .chip{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:8px;font-size:13px;color:var(--txt)}
+
+    .details{margin-top:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);overflow:hidden;transition:max-height .45s cubic-bezier(.2,.9,.2,1);max-height:0}
+    .details.open{max-height:1200px;padding:18px}
+    .details p{color:var(--muted);line-height:1.6;margin:0 0 10px}
+    .spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+    .spec{background:rgba(255,255,255,0.02);padding:10px;border-radius:8px}
+    .spec h5{margin:0 0 6px;font-size:13px}
+    .spec p{margin:0;font-size:13px;color:var(--muted)}
+
+    @media (max-width:880px){.card{grid-template-columns:1fr;}.panel{order:3}.controls{flex-wrap:wrap}.wrap{padding:10px}}
+
+    .card:hover{transform:translateY(-4px);transition:transform .25s ease;box-shadow:0 20px 50px rgba(4,10,30,0.7)}
+    .btn:active{transform:translateY(1px)}
+
+    .logo{width:54px;height:54px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent-2),var(--accent));font-weight:800;color:#001219}
+
+    pre{background:#041022;padding:12px;border-radius:10px;color:var(--muted);font-size:13px;overflow:auto}
+  </style>
 </head>
-
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">Viisnu Anand S</div>
-    <nav class="nav">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#certs">Certificates</a>
-      <a href="#contact">Contact</a>
-      <button id="themeToggle" class="theme-btn" title="Toggle theme">◐</button>
-    </nav>
-  </div>
-</header>
-
-<!-- === HERO SECTION === -->
-<section id="home" class="hero">
-  <div class="container hero-inner">
-    <h1>Hi, I'm <span class="accent">Viisnu Anand S</span></h1>
-    <p class="tagline">Electronics & Communication Engineer | Robotics & Drones Enthusiast</p>
-    <div class="cta">
-      <a href="#projects" class="btn primary pulse">Explore More ↓</a>
-      <a href="assets/Resume.pdf" class="btn smooth" target="_blank">Download Resume</a>
-    </div>
-  </div>
-</section>
-
-<!-- === ABOUT SECTION === -->
-<section id="about" class="about fade-in">
-  <div class="container about-inner">
-    <img src="assets/viisnu.jpg" alt="Viisnu Anand S" class="avatar">
-    <div class="about-right">
-      <h2>About Me</h2>
-      <p>
-        I'm an <strong>Electronics and Communication Engineering</strong> student at 
-        <strong>Kumaraguru College of Technology</strong>, passionate about 
-        <em>Robotics, Drones, Embedded Systems, and Hardware Design</em>.  
-        I enjoy developing intelligent systems that integrate real-time control, perception, and embedded hardware — 
-        ranging from autonomous drones to IoT-based robotics applications.
-      </p>
-      <p>
-        My core interests lie in <strong>Embedded Hardware Development</strong>, <strong>Autonomous Systems</strong>, 
-        and <strong>AI-integrated Robotics</strong>.  
-        I’m driven by curiosity and a passion for innovation, constantly exploring how electronics, computing, 
-        and automation can come together to build smarter, more efficient technologies for the future.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- === PROJECTS SECTION === -->
-<section id="projects" class="projects fade-in">
-  <div class="container">
-    <h2>Projects</h2>
-    <div class="cards">
-
-      <article class="card">
-        <h3>Smart India Hackathon 2024</h3>
-        <p>AI-powered DVB-S2X Signal Detection & Classification system using deep learning and signal processing.</p>
-        <div class="hidden">
-          <p>Designed with PyTorch & MATLAB, improving classification accuracy by 18%. Integrated adaptive thresholding and CNN-based modulation recognition.</p>
+  <div class="wrap">
+    <div class="card" role="region" aria-label="ANAV project card">
+      <div class="meta">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div class="logo">AN</div>
+          <div>
+            <div class="eyebrow">ISRO Robotics Challenge — URSC 2024</div>
+            <div class="title">Autonomous Navigation Aerial Vehicle (ANAV)</div>
+            <div class="subtitle">Autonomous quadrotor for GPS‑denied, Mars‑like environments</div>
+          </div>
         </div>
-        <a class="learn" href="#">Learn More ↓</a>
-      </article>
 
-      <article class="card">
-        <h3>IRoC-U 2025 Challenge</h3>
-        <p>Autonomous drone with LiDAR and SLAM-based navigation for GPS-denied environments.</p>
-        <div class="hidden">
-          <p>Jetson Orin Nano + Pixhawk integration, using ZED 2i for stereo depth and DroneKit for control automation.</p>
+        <div class="blurb">AI-powered drone integrating Jetson Orin Nano and Pixhawk for real‑time SLAM, obstacle avoidance, and safe-spot detection in GPS‑denied terrain. Selected among the <strong>Top 37</strong> teams and advanced to the <strong>Elimination Round</strong>.</div>
+
+        <div class="badges">
+          <span class="badge"><strong>Top 37</strong> — IRoC-U 2024</span>
+          <span class="badge">GPS‑Denied (Mars‑like)</span>
+          <span class="badge">Onboard AI</span>
         </div>
-        <a class="learn" href="#">Learn More ↓</a>
-      </article>
 
-      <article class="card">
-        <h3>Wire Color Detection System</h3>
-        <p>Low-cost color sequence detection for industrial automation.</p>
-        <div class="hidden">
-          <p>Implemented with OpenCV and Raspberry Pi, capable of 95% accuracy in real-time detection scenarios.</p>
+        <div class="controls">
+          <button class="btn primary" id="viewMoreBtn" aria-expanded="false">View More</button>
+          <button class="btn" id="copyBtn">Copy Summary</button>
+          <a class="btn" href="#download" id="downloadDemo">Download HTML</a>
         </div>
-        <a class="learn" href="#">Learn More ↓</a>
-      </article>
 
-      <article class="card">
-        <h3>Gesture Controlled Robot</h3>
-        <p>Real-time hand gesture-controlled robot with camera integration.</p>
-        <div class="hidden">
-          <p>Built using Raspberry Pi and Flask for live video streaming; integrated MPU6050 sensor and OpenCV gesture tracking.</p>
+        <div class="details" id="details">
+          <h3 style="margin:0 0 8px">Project Overview</h3>
+          <p>The ANAV system was developed for autonomous exploration in GPS‑denied environments emulating Martian conditions. It combines stereo vision, LiDAR, and IMU sensor fusion with real‑time decision making on an NVIDIA Jetson Orin Nano to perform SLAM, safe spot detection, and emergency landing without external positioning.</p>
+
+          <div class="spec-grid">
+            <div class="spec">
+              <h5>Key Algorithms</h5>
+              <p>RTAB‑Map, ICP, Dijkstra, PointNet++, ResNet-based classification</p>
+            </div>
+            <div class="spec">
+              <h5>Key Features</h5>
+              <p>Safe‑spot detection, lost‑link fallback, low battery emergency landing, ROS2 + PX4 integration</p>
+            </div>
+            <div class="spec">
+              <h5>Performance</h5>
+              <p>30s stable hover, landing accuracy ≈ 30 cm, reliable lost‑link recovery</p>
+            </div>
+            <div class="spec">
+              <h5>Testing</h5>
+              <p>PX4 SITL, Gazebo (Mars‑like terrain), real‑world qualification & elimination rounds</p>
+            </div>
+          </div>
+
+          <h4 style="margin-top:12px">Summary</h4>
+          <p>Built by Team Xenith (Kumaraguru College of Technology). Demonstrated robust autonomy in competition and advanced to the IRoC-U elimination round. The system is modular, production‑ready for further research, and extensible with additional sensors such as long‑range LiDAR.</p>
+
+          <pre id="summaryText">ANAV — Autonomous Navigation Aerial Vehicle. Selected Top 37 in IRoC-U 2024. GPS‑denied Martian‑like autonomy using Jetson Orin Nano + Pixhawk, MYNT EYE 3D, RPLiDAR S1. Algorithms: RTAB‑Map, ICP, Dijkstra, PointNet++, ResNet. Features: safe‑spot detection, lost‑link/low‑battery recovery.</pre>
         </div>
-        <a class="learn" href="#">Learn More ↓</a>
-      </article>
+      </div>
 
-      <article class="card">
-        <h3>Surveillance Rover</h3>
-        <p>IoT-enabled rover for live surveillance via Flask web interface.</p>
-        <div class="hidden">
-          <p>Enabled remote control through Wi-Fi, camera feed, and obstacle avoidance system using ultrasonic sensors.</p>
+      <aside class="panel" aria-hidden="false">
+        <div>
+          <h4 style="margin:0 0 6px">Tech Stack Used</h4>
+          <div class="tech-list" style="margin-top:8px">
+            <span class="chip">NVIDIA Jetson Orin Nano</span>
+            <span class="chip">Pixhawk 2.4.8 (PX4)</span>
+            <span class="chip">MYNT EYE 3D / RealSense D455</span>
+            <span class="chip">SLAMTEC RPLiDAR S1</span>
+            <span class="chip">ROS2</span>
+            <span class="chip">Python</span>
+            <span class="chip">OpenCV</span>
+            <span class="chip">PointNet++, ResNet</span>
+            <span class="chip">Gazebo / PX4 SITL</span>
+          </div>
         </div>
-        <a class="learn" href="#">Learn More ↓</a>
-      </article>
 
-    </div>
-  </div>
-</section>
-
-<!-- === CERTIFICATES SECTION === -->
-<section id="certs" class="certs fade-in">
-  <div class="container">
-    <h2>Certificates & Achievements</h2>
-    <div class="certificates-grid">
-
-      <div class="cert-card"><span class="badge internship">Internship</span>
-        <h3>Internship — PRICOL Limited</h3>
-        <p><strong>Pricol Limited</strong></p>
-        <p>Recipient: Viisnu Anand S — June 16 – June 30, 2025</p>
-        <p>Completed internship at Pricol Limited, Corporate Manufacturing Engineering Department.</p>
-        <p><strong>Performance:</strong> Good</p>
-      </div>
-
-      <div class="cert-card"><span class="badge achievement">Achievement</span>
-        <h3>Certificate of Recognition for Excellence</h3>
-        <p><strong>Kumaraguru College of Technology</strong></p>
-        <p>Recipient: Viisnu Anand S — August 15, 2024</p>
-        <p>Recognition for excellence in academic and cocurricular activities.</p>
-      </div>
-
-      <div class="cert-card"><span class="badge finalist">Finalist</span>
-        <h3>Smart India Hackathon 2024 — Senior Software Edition</h3>
-        <p><strong>Ministry of Education's Innovation Cell, Government of India</strong></p>
-        <p>Recipient: Viisnu Anand S — 2024</p>
-        <p>Finalist in the Smart India Hackathon 2024, contributing to innovative software solutions.</p>
-      </div>
-        <!-- === 2ND ROW: WORKSHOPS === -->
-     <div class="cert-card"><span class="badge participation">Workshop</span>
-        <h3>IEEE Antenna Design Workshop</h3>
-        <p><strong>IEEE Antennas and Propagation Society, KCT</strong></p>
-        <p>Recipient: Viisnu Anand S — July 31, 2024</p>
-        <p>Participated in the “Antenna Design” workshop organized by IEEE APS Society, Kumaraguru College of Technology.</p>
-        <p><strong>Advisors:</strong> Mr. Arun Kumar S, Dr. Sasikala S</p>
-      </div>
-
-      <div class="cert-card"><span class="badge participation">Workshop</span>
-        <h3>Emerging Trends in IoT & Cloud Computing</h3>
-        <p><strong>DLithe & Department of ECE, KCT</strong></p>
-        <p>Recipient: Viisnu Anand S — December 2–9, 2023</p>
-        <p>Successfully completed the value-added course on “Emerging Trends in IoT and Cloud Computing — Hands-on Approach”.</p>
-        <p><strong>Organized by:</strong> DLithe Consultancy Services Pvt. Ltd., Bangalore</p>
-      </div>
-
-      <div class="cert-card">
-        <span class="badge course">Course</span>
-        <h3>VLSI – Essential Concepts and Detailed Interview Guide</h3>
-        <p><strong>Udemy</strong></p>
-        <p>Instructor: Kunal Ghosh</p>
-        <p>Recipient: Viisnu Anand S — July 10, 2024</p>
-        <p>Completed the online course covering fundamental and advanced VLSI concepts with interview preparation guidance.</p>
-      </div>
-
-
-       
-      <div class="cert-card"><span class="badge course">Course</span>
-        <h3>Embedded Systems and IoT</h3>
-        <p><strong>NPTEL</strong></p>
-        <p>Recipient: Viisnu Anand S — 2024</p>
-        <p>Completed comprehensive course on Embedded Systems and Internet of Things.</p>
-      </div>
-
-      <div class="cert-card"><span class="badge course">Course</span>
-        <h3>Introduction to Internet of Things (IoT)</h3>
-        <p><strong>NPTEL</strong></p>
-        <p>Recipient: Viisnu Anand S — July – October 2024</p>
-        <p>Completed 12-week NPTEL course on Introduction to IoT.</p>
-        <p><strong>Score:</strong> 73</p>
-      </div>
-
-      <div class="cert-card"><span class="badge course">Course</span>
-        <h3>Frequency Distribution</h3>
-        <p><strong>Great Learning Academy</strong></p>
-        <p>Recipient: Viisnu Anand S — September 2024</p>
-        <p>Completed a free online course on Frequency Distribution.</p>
-      </div>
-
-      <div class="cert-card"><span class="badge course">Course</span>
-        <h3>AWS Foundations: Machine Learning Basics</h3>
-        <p><strong>AWS</strong></p>
-        <p>Recipient: Viisnu Anand S — January 01, 2025</p>
-        <p>Completed foundational course on machine learning using AWS services.</p>
-      </div>
-
-      <div class="cert-card"><span class="badge course">Course</span>
-        <h3>C Programming for Embedded Applications</h3>
-        <p><strong>LinkedIn Learning</strong></p>
-        <p>Recipient: Viisnu Anand S — May 30, 2025</p>
-        <p>Completed course focused on programming embedded systems in C.</p>
-      </div>
-
-      <div class="cert-card"><span class="badge course">Course</span>
-        <h3>Introduction to Battery Management Systems</h3>
-        <p><strong>University of Colorado Boulder (Coursera)</strong></p>
-        <p>Recipient: Viisnu Anand S — October 08, 2025</p>
-        <p>Completed non-credit course on battery management systems via Coursera.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- === CONTACT SECTION === -->
-<section id="contact" class="contact fade-in">
-  <div class="container">
-    <h2>Contact Me</h2>
-    <p>Let’s connect! You can reach me through any of the following platforms:</p>
-
-    <div class="contact-actions">
-      <a href="mailto:viisnuanand.s@gmail.com" class="btn primary">✉️ Mail Me</a>
-      <a href="tel:9443742244" class="btn secondary">📞 Call Me</a>
-      <a href="https://www.linkedin.com/in/viisnu-anand" target="_blank" class="btn secondary">🔗 LinkedIn</a>
+        <div style="margin-top:18px">
+          <h4 style="margin:0 0 8px">Quick Links</h4>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a class="btn" href="#logs">View Logs</a>
+            <a class="btn" href="#slides">Open Presentation</a>
+          </div>
+        </div>
+      </aside>
     </div>
 
-
-    <p style="margin-top: 20px; color: var(--muted);">
-      <strong>Email:</strong> <a href="mailto:viisnuanand.s@gmail.com">viisnuanand.s@gmail.com</a><br>
-      <strong>Phone:</strong> <a href="tel:9443742244">9443742244</a><br>
-      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/viisnu-anand" target="_blank">www.linkedin.com/in/viisnu-anand</a>
-    </p>
+    <div style="margin-top:12px;color:var(--muted);font-size:13px">Click <strong>View More</strong> to expand the full project description. Use <strong>Copy Summary</strong> to paste into your portfolio or resume.</div>
   </div>
-</section>
 
-<!-- === SCRIPT === -->
-<script>
-  // 🌗 Theme toggle
-  const themeToggle = document.getElementById('themeToggle');
-  themeToggle.addEventListener('click', () => {
-    document.documentElement.classList.toggle('light');
-    localStorage.setItem('theme', document.documentElement.classList.contains('light') ? 'light' : 'dark');
-  });
-  if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light');
+  <script>
+    const btn = document.getElementById('viewMoreBtn');
+    const details = document.getElementById('details');
+    const copyBtn = document.getElementById('copyBtn');
+    const summaryText = document.getElementById('summaryText').innerText;
 
-  // ✨ Fade-in for sections
-  const fadeEls = document.querySelectorAll('.fade-in');
-  const fadeObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('visible'));
-  }, { threshold: 0.2 });
-  fadeEls.forEach(el => fadeObserver.observe(el));
-
-  // 🎬 Smooth open/close animation for projects
-  document.querySelectorAll('.card .learn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const card = btn.closest('.card');
-      const hidden = card.querySelector('.hidden');
-      hidden.style.maxHeight = hidden.style.maxHeight ? null : hidden.scrollHeight + 'px';
-      hidden.classList.toggle('open');
-      btn.textContent = hidden.classList.contains('open') ? 'Show Less ↑' : 'Learn More ↓';
+    btn.addEventListener('click', ()=>{
+      const open = details.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      btn.textContent = open? 'Hide Details' : 'View More';
     });
-  });
-</script>
 
+    copyBtn.addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(summaryText);
+        copyBtn.textContent = 'Copied!';
+        setTimeout(()=> copyBtn.textContent = 'Copy Summary',1400)
+      }catch(e){
+        alert('Copy failed — select text manually');
+      }
+    });
+
+    const dl = document.getElementById('downloadDemo');
+    dl.addEventListener('click',(e)=>{
+      e.preventDefault();
+      const content = document.documentElement.outerHTML;
+      const blob = new Blob([content],{type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'ANAV_project_card.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+  </script>
 </body>
 </html>
