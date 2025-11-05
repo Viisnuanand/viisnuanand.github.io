@@ -92,15 +92,31 @@ section {
   text-align: center;
   padding-top: 80px;
 }
+
 .hero-inner h1 {
-  font-size: 64px;
-  margin: 0 0 10px;
-  letter-spacing: -1px;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
+  font-size: 64px;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #ffffff, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+/*  new rule here */
+.tagline {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #cfcfcf;
+  margin-top: 10px;
+}
+
 .accent {
   color: var(--accent);
 }
+
+
 
 /* === About Section === */
 .about {
