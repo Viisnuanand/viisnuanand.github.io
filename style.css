@@ -84,7 +84,7 @@ section {
 
 /* === Hero Section === */
 .hero {
-  min-height: 70vh;
+  min-height: 65vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,7 +92,7 @@ section {
   padding-top: 80px;
 }
 
-/* Dynamic gradient text for both themes */
+/* Gradient hero text */
 .hero-inner h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
@@ -104,14 +104,13 @@ section {
   transition: background 0.5s ease;
 }
 
-/* ✅ Adjust gradient for light mode */
 .light .hero-inner h1 {
   background: linear-gradient(90deg, #111111 0%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Tagline text */
+/* Tagline */
 .tagline {
   font-family: 'Source Sans 3', sans-serif;
   font-size: 1.2rem;
@@ -287,7 +286,7 @@ section {
   margin: 20px 0;
 }
 
-/* === Button Styles (Final Version with Fade-Up + Glow) === */
+/* === Buttons with Cinematic Animation === */
 .btn {
   display: inline-block;
   padding: 10px 18px;
@@ -299,40 +298,40 @@ section {
   font-weight: 500;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeUpButton 1s ease forwards;
   transition: all 0.4s ease;
 }
 
-.btn:nth-child(1) { animation-delay: 0.3s; }
-.btn:nth-child(2) { animation-delay: 0.5s; }
+/* Cinematic staggered entry */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
-/* Primary (Explore More) button */
-.btn.primary {
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.hero .btn.primary {
   background: var(--accent);
   color: #fff;
   border: none;
-  box-shadow: 0 0 0 rgba(37, 99, 235, 0.6);
-  animation: fadeUpButton 1s ease forwards, pulse-glow 2s infinite ease-in-out;
-  transition: box-shadow 0.4s ease, transform 0.3s ease;
+  animation: fadeInLeft 1s ease forwards, pulse-glow 2s infinite ease-in-out;
+  animation-delay: 0.3s;
 }
 
-.btn.primary:hover {
-  box-shadow: 0 0 20px rgba(37, 99, 235, 0.8);
-  transform: scale(1.05);
-}
-
-/* Pulse glow animation */
-@keyframes pulse-glow {
-  0% { box-shadow: 0 0 0 rgba(37, 99, 235, 0.6); }
-  50% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.8); }
-  100% { box-shadow: 0 0 0 rgba(37, 99, 235, 0.6); }
-}
-
-/* Secondary (Download Resume) button */
-.btn:not(.primary) {
+.hero .btn:not(.primary) {
   background: rgba(255, 255, 255, 0.05);
   color: #e6e6e6;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeInRight 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+/* Hover Effects */
+.btn.primary:hover {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.8);
+  transform: scale(1.05);
 }
 
 .btn:not(.primary):hover {
@@ -342,9 +341,16 @@ section {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Fade-up animation */
-@keyframes fadeUpButton {
-  from { opacity: 0; transform: translateY(20px); }
+/* Pulse glow animation */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 rgba(37, 99, 235, 0.6); }
+  50% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.8); }
+  100% { box-shadow: 0 0 0 rgba(37, 99, 235, 0.6); }
+}
+
+/* === Animations === */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -386,26 +392,18 @@ section {
 
 .light h1, .light h2, .light h3 { color: #111; }
 
-.light .btn {
-  color: #111;
-  border-color: rgba(0, 0, 0, 0.2);
-}
-
 .light .btn.primary {
   background: var(--accent);
   color: white;
   border: none;
-  animation: fadeUpButton 1s ease forwards, pulse-glow 2s infinite ease-in-out;
-}
-
-.light .btn.primary:hover {
-  box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
+  animation: fadeInLeft 1s ease forwards, pulse-glow 2s infinite ease-in-out;
 }
 
 .light .btn:not(.primary) {
   background: rgba(0, 0, 0, 0.05);
   color: #222;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  animation: fadeInRight 1s ease forwards;
 }
 
 .light .btn:not(.primary):hover {
@@ -464,5 +462,6 @@ section {
   .cards { grid-template-columns: 1fr; }
   .certificates-grid { grid-template-columns: 1fr; }
 }
+
 
 
