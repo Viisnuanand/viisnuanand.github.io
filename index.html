@@ -72,14 +72,36 @@
     <h2>Projects</h2>
     <div class="cards">
 
-      <article class="card">
-        <h3>Smart India Hackathon 2024</h3>
-        <p>AI-powered DVB-S2X Signal Detection & Classification system using deep learning and signal processing.</p>
-        <div class="hidden">
-          <p>Designed with PyTorch & MATLAB, improving classification accuracy by 18%. Integrated adaptive thresholding and CNN-based modulation recognition.</p>
-        </div>
-        <a class="learn" href="#">Learn More ↓</a>
-      </article>
+<article class="card">
+  <h3>Smart India Hackathon 2024 — Adaptive Modulation Recognition System</h3>
+  <p>
+    Developed a real-time adaptive modulation recognition system for DVB-S2X signals using Software Defined Radio (SDR) and deep learning, achieving over 95% classification accuracy.
+  </p>
+  <div class="hidden">
+    <p>
+      This project was designed for the <strong>Smart India Hackathon 2024 (Software Edition)</strong> under the problem statement on enhancing wireless communication efficiency.  
+      Traditional systems use fixed modulation schemes, leading to inefficiency and increased error rates under changing signal conditions.  
+      Our proposed solution implements <strong>adaptive modulation</strong> and <strong>automatic modulation recognition (AMR)</strong> using deep learning integrated into a Software Defined Radio (SDR) testbed.
+    </p>
+    <p>
+      The system dynamically classifies modulation types — <strong>BPSK, QPSK, 16-QAM, 64-QAM</strong> — using real-time <strong>Signal-to-Noise Ratio (SNR)</strong> and <strong>Error Vector Magnitude (EVM)</strong> metrics.  
+      A custom <strong>GNU Radio algorithm</strong> with an embedded Python block enables on-the-fly waveform analysis and classification without requiring hardware-level reconfiguration.
+    </p>
+    <p>
+      The deep learning model combines <strong>CNN</strong> layers for feature extraction and <strong>LSTM</strong> networks for temporal sequence prediction, achieving a classification accuracy of <strong>95.4%</strong> across 55 modulation schemes.  
+      Training data was generated using <strong>MATLAB’s Communication Toolbox</strong> for 1,10,000 waveform samples under various SNR and Eb/N₀ conditions.
+    </p>
+    <p>
+      The model was deployed using the <strong>ONNX framework</strong> to ensure cross-platform compatibility and integrated with <strong>SDR hardware</strong> (HackRF, USRP, Xilinx RFSoC PYNQ) for real-time testing.  
+      Evaluation metrics such as <strong>Bit Error Rate (BER)</strong> and throughput confirmed the system’s robustness under varying channel conditions.
+    </p>
+    <p>
+      <strong>Tech Stack Used:</strong> GNU Radio, HackRF/USRP/Xilinx RFSoC PYNQ, MATLAB, Python, TensorFlow, ONNX, CNN-LSTM Architecture, DVB-S2X Signal Dataset.
+    </p>
+  </div>
+  <a class="learn" href="#">Learn More ↓</a>
+</article>
+
 <article class="card">
   <h3>Autonomous Navigation Aerial Vehicle (ANAV)</h3>
   <p>AI-powered quadrotor developed for GPS-denied, Mars-like environments — selected among the Top 37 teams in the ISRO Robotics Challenge 2024 and advanced to the Elimination Round.</p>
