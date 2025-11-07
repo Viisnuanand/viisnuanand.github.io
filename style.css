@@ -460,4 +460,33 @@ section {
 .tagline {
   color: #cfcfcf;
 }
+/* === Footer Section === */
+.site-footer {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  text-align: center;
+  padding: 35px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer-inner p {
+  margin: 5px 0;
+}
+
+.site-footer strong {
+  color: #fff;
+}
+
+/* Light theme adjustment */
+.light .site-footer {
+  background: rgba(255, 255, 255, 0.85);
+  color: #444;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light .site-footer strong {
+  color: #000;
+}
 
