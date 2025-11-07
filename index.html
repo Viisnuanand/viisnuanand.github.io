@@ -400,12 +400,20 @@
 
   window.addEventListener("scroll", () => {
     let current = "";
+    const scrollPos = window.scrollY + window.innerHeight / 2;
+
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 100;
-      if (scrollY >= sectionTop) {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
         current = section.getAttribute("id");
       }
     });
+
+    // Handle bottom edge (ensures Contact stays active at bottom)
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+      current = "contact";
+    }
 
     navLinks.forEach(link => {
       link.classList.remove("active");
@@ -418,4 +426,5 @@
 
 </body>
 </html>
+
 
