@@ -345,22 +345,14 @@
 <!-- === FOOTER SECTION === -->
 <footer class="site-footer fade-in">
   <div class="container footer-inner">
-   <p>Engineered & Crafted by <strong>Viisnu Anand S</strong></p>
-   <p>Empowering the future with intelligent embedded systems and autonomous technology.</p>
-   <p>© 2025 <strong>Viisnu Anand S</strong>. All Rights Reserved.</p>
-
+    <p>Engineered & Crafted by <strong>Viisnu Anand S</strong></p>
+    <p>Empowering the future with intelligent embedded systems and autonomous technology.</p>
+    <p>© 2025 <strong>Viisnu Anand S</strong>. All Rights Reserved.</p>
   </div>
 </footer>
 
 <script>
-  // 🌗 Theme toggle + fade + learn more scripts
-</script>
-
-</body>
-</html>
-
-
-<script>
+  // 🌗 Theme toggle
   const themeToggle = document.getElementById('themeToggle');
   themeToggle.addEventListener('click', () => {
     document.documentElement.classList.toggle('light');
@@ -368,13 +360,14 @@
   });
   if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light');
 
+  // ✨ Fade-in animations
   const fadeEls = document.querySelectorAll('.fade-in');
   const fadeObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('visible'));
   }, { threshold: 0.2 });
   fadeEls.forEach(el => fadeObserver.observe(el));
 
-  // === One-card-at-a-time Learn More toggle ===
+  // 🎬 One-card-at-a-time Learn More toggle
   document.querySelectorAll('.card .learn').forEach(btn => {
     btn.addEventListener('click', e => {
       e.preventDefault();
@@ -387,9 +380,8 @@
         el.classList.remove('open');
         el.style.maxHeight = null;
       });
-      document.querySelectorAll('.card .learn').forEach(b => b.textContent = 'Learn More ↓');
 
-      // Toggle the clicked card
+      // Toggle the clicked one
       if (!isOpen) {
         hidden.style.maxHeight = hidden.scrollHeight + 'px';
         hidden.classList.add('open');
@@ -398,6 +390,27 @@
         hidden.style.maxHeight = null;
         hidden.classList.remove('open');
         btn.textContent = 'Learn More ↓';
+      }
+    });
+  });
+
+  // 🌐 Active section tracking for navbar highlight
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
       }
     });
   });
