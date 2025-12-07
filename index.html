@@ -32,17 +32,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<script>
-fetch("https://crimson-dawn-f894.viisnuanand-s.workers.dev/", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    page: location.pathname,
-    referrer: document.referrer,
-    ua: navigator.userAgent
-  })
-});
-</script>
+
 
 <body>
 <header class="site-header">
@@ -416,6 +406,52 @@ fetch("https://crimson-dawn-f894.viisnuanand-s.workers.dev/", {
     <p>© 2025 <strong>Viisnu Anand S</strong>. All Rights Reserved.</p>
   </div>
 </footer>
+<script>
+(function(){
+  // only send one notification per browser session to avoid spam
+  if (sessionStorage.getItem('portfolio_notified')) return;
+  sessionStorage.setItem('portfolio_notified', '1');
+
+  // optional: only notify for specific pages (uncomment and adjust)
+  // const allowedPages = ['/projects', '/']; if (!allowedPages.includes(location.pathname)) return;
+
+  // optional: sample rate (0..1) to reduce volume on high traffic
+  const sampleRate = 1; // set to 0.2 for 20% of visits
+
+  if (Math.random() > sampleRate) return;
+
+  // prefer navigator.sendBeacon on unload for reliability, fallback to fetch
+  const payload = {
+    page: location.pathname,
+    referrer: document.referrer,
+    ua: navigator.userAgent
+  };
+
+  // Use sendBeacon when possible (works even on page unload)
+  try {
+    const url = 'https://crimson-dawn-f894.viisnuanand-s.workers.dev/';
+    const data = JSON.stringify(payload);
+    const sent = navigator.sendBeacon && navigator.sendBeacon(url, new Blob([data], { type: 'application/json' }));
+    if (!sent) {
+      // fallback to fetch
+      fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: data,
+        keepalive: true
+      }).catch(()=>{/* ignore errors */});
+    }
+  } catch (e) {
+    // final fallback
+    fetch('https://crimson-dawn-f894.viisnuanand-s.workers.dev/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      keepalive: true
+    }).catch(()=>{/* ignore errors */});
+  }
+})();
+</script>
 
 <script>
   // 🌗 Theme toggle
