@@ -32,6 +32,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+<script>
+fetch("https://crimson-dawn-f894.viisnuanand-s.workers.dev/", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    page: location.pathname,
+    referrer: document.referrer,
+    ua: navigator.userAgent
+  })
+});
+</script>
 
 <body>
 <header class="site-header">
