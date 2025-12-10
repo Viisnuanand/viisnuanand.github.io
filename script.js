@@ -80,3 +80,4 @@ document.querySelectorAll('.card .learn').forEach(link => {
     }
   });
 });
+
