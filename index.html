@@ -39,6 +39,7 @@ gtag('config', 'G-9YY1517YRB');
 <nav class="nav">
 <a href="#home" class="active">Home</a>
 <a href="#about">About</a>
+<a href="#skills">Skills</a>   
 <a href="#projects">Projects</a>
 <a href="#certs">Certificates</a>
 <a href="#contact">Contact</a>
@@ -68,6 +69,54 @@ gtag('config', 'G-9YY1517YRB');
 </div>
 </div>
 </section>
+<section id="skills" class="section fade-in">
+  <div class="container" style="text-align:center; padding-top: 20px;">
+    <h2 class="skills-title">Skills</h2>
+  </div>
+
+  <div class="skills-wrap container">
+    <div class="skills-row">
+
+      <!-- Embedded Systems Engineering Card -->
+      <div class="skill-panel" tabindex="0">
+        <h3 class="skill-heading">Embedded Systems Engineering</h3>
+        <ul class="skill-list">
+          <li>Embedded C / C++</li>
+          <li>ARM Cortex-M (Tiva C)</li>
+          <li>ESP32, ESP8266</li>
+          <li>UART, SPI, I2C</li>
+          <li>PWM, ADC, Timers</li>
+          <li>Raspberry Pi 4</li>
+          <li>Jetson Nano / Jetson Orin Nano</li>
+          <li>Pixhawk (ArduPilot / DroneKit)</li>
+          <li>IMU, RealSense D455, ZED 2i, MYNT Eye</li>
+          <li>Motor Drivers (L298N, ESC)</li>
+          <li>Robotics & Drone Control Systems</li>
+        </ul>
+      </div>
+
+      <!-- Software, AI & Signal Processing Card -->
+      <div class="skill-panel" tabindex="0">
+        <h3 class="skill-heading">Software, AI & Signal Processing</h3>
+        <ul class="skill-list">
+          <li>Python (NumPy, Pandas, OpenCV)</li>
+          <li>Machine Learning (LSTM, Random Forest, Gradient Boosted Trees)</li>
+          <li>Object Detection Workflow (YOLO)</li>
+          <li>Flask Web Applications</li>
+          <li>PyQt5 GUI Development</li>
+          <li>MATLAB (numerical computing & DSP)</li>
+          <li>GNU Radio (SDR workflows & DSP)</li>
+          <li>Signal Processing (FFT, filters, peak detection)</li>
+          <li>Optimization Algorithms (GA, PSO)</li>
+          <li>Git & Linux Development</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
 <section id="projects" class="projects fade-in">
 <div class="container">
@@ -320,6 +369,8 @@ entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('vis
 }, { threshold: 0.2 });
 fadeEls.forEach(el => fadeObserver.observe(el));
 
+
+
 // 🎬 One-card-at-a-time Learn More toggle
 document.querySelectorAll('.card .learn').forEach(btn => {
 btn.addEventListener('click', e => {
@@ -378,5 +429,26 @@ link.classList.add("active");
 });
 </script>
 
+
+<script>
+/* Reveal skill panels the same way other cards reveal */
+(function(){
+  const panels = document.querySelectorAll('.skill-panel');
+  if (!panels || panels.length === 0) return;
+
+  const obs = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // one-time reveal
+      }
+    });
+  }, { threshold: 0.12 });
+
+  panels.forEach(p => obs.observe(p));
+})();
+</script>
+
 </body>
 </html>
+
