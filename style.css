@@ -628,4 +628,69 @@ section {
     gap: 20px;
   }
 }
+/* ===== EXPERIENCE SECTION ===== */
 
+.exp-timeline{
+    max-width:900px;
+    margin:40px auto 0;
+    position:relative;
+}
+
+.exp-timeline::before{
+    content:"";
+    position:absolute;
+    left:120px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:var(--accent);
+}
+
+.exp-item{
+    display:flex;
+    gap:30px;
+    margin-bottom:40px;
+}
+
+.exp-date{
+    width:120px;
+    font-weight:600;
+    color:var(--accent);
+    flex-shrink:0;
+}
+
+.exp-content{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:25px;
+    flex:1;
+    transition:0.3s;
+}
+
+.exp-content:hover{
+    transform:translateY(-4px);
+}
+
+.exp-content h3{
+    margin-bottom:6px;
+}
+
+.exp-content h4{
+    opacity:.8;
+    margin-bottom:15px;
+}
+
+.exp-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:15px;
+}
+
+.exp-tags span{
+    background:rgba(255,255,255,0.08);
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:.85rem;
+}
